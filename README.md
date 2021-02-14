@@ -16,7 +16,7 @@
 
 **Steps to Run Client**:
 1)  Compile Using : ```javac Client.java```
-2)  Run Using Command: ```java Client.java -h <host-ip> -p <port>```
+2)  Run Using Command: ```java Client.java -h <server-ip> -p <port>```
 3)  Client will connect to Server
 4)  Now wait for instructions from Server
 5)  Once you get instrucions, it will contain key and time in seconds.
