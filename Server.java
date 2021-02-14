@@ -122,7 +122,7 @@ public class Server
             playFollowMe(timeX, serverInstruction, clientResponse);
 
             //Closing Sockets and Streams
-            System.out.println("Closing Connection"); 
+            System.out.println("GAME OVER :((...Closing Connection..."); 
 
             socket.close();
             serverData.close();
@@ -137,6 +137,24 @@ public class Server
     }
     public static void main(String args[])
     {
-        Server server = new Server(8888);
+        if(args.length != 2)
+        {
+            System.out.println("Error: Please Enter Port Number as an argument : java Server.java -p <port>");
+            return;
+        }
+        int port = 0;
+        int i = 0;
+        while(i < args.length)
+        {
+            if(args[i].equals("-p")){
+                port = Integer.parseInt(args[i+1]);
+            }
+            else{
+                System.out.println("Error: Usage : java Server.java -p <port>");
+                return; 
+            }
+            i += 2;
+        }
+        Server server = new Server(port);
     }
 }
