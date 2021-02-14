@@ -37,6 +37,11 @@ public class Client
                 System.out.println("---------------------------------------------------------------");
             }
         }
+        catch(EOFException e)
+        {
+            System.out.println("GAME OVER!!!");
+            System.out.println(e);
+        }
         catch(Exception e)
         {
             System.out.println(e);
@@ -55,6 +60,28 @@ public class Client
     }
     public static void main(String args[])
     {
-        Client client = new Client("127.0.0.1", 8888);
+        if(args.length != 4)
+        {
+            System.out.println("Error: Please run again as-> java Client.java -h <host-ip> -p <port>");
+            return;
+        }
+        String host = "";
+        int port = 0;
+        int i = 0;
+        while(i < args.length)
+        {
+            if(args[i].equals("-h")){
+                host = args[i+1];
+            }
+            else if(args[i].equals("-p")){
+                port = Integer.parseInt(args[i+1]);
+            }
+            else{
+                System.out.println("Error. Usage : java Client.java -h <host-ip> -p <port>");
+                return;
+            }
+            i += 2;
+        }
+        Client client = new Client(host, port);
     } 
 }
