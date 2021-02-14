@@ -97,6 +97,7 @@ public class Server
     Description:
         => Opens a Socket to list at a Port
         => Accepts connection from Client on another socket
+        => Initialise Input and Output Streams 
         => Calls playFollowMe game function
     */
     public Server(int port)
