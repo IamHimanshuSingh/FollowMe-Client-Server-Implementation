@@ -29,11 +29,6 @@ public class Client
                 System.out.println("Key from Server, Reply within X seconds : (Key, X) => " + keyFromServer + "," + timeX);
                 myReply = clientData.readLine();
                 out.writeUTF(myReply);
-                /*String serverGarbageData = "SomeInitialData";
-                while(!serverGarbageData.equals(""))
-                {
-                    serverGarbageData = serverData.readUTF();
-                }*/
                 System.out.println("---------------------------------------------------------------");
             }
         }
